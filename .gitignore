@@ -14,3 +14,13 @@ capybara-*.html
 **.orig
 rerun.txt
 pickle-email-*.html
+
+# RubyMine
+.idea/
+
+# Vagrant
+.vagrant/
+Vagrantfile
+
+# Puppet (for now)
+puppet/
