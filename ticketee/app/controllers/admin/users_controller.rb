@@ -35,24 +35,22 @@ class Admin::UsersController < Admin::BaseController
       params[:user].delete(:password)
       params[:user].delete(:password_confirmation)
     end
-
     set_admin
     if @user.update_attributes(params[:user])
-      flash[:notice] = "User has been updated."
+      flash[:notice] = 'User has been updated.'
       redirect_to admin_users_path
     else
-      flash[:alert] = "User has not been updated."
-      render :action => "edit"
+      flash[:alert] = 'User has not been updated.'
+      render :action => 'edit'
     end
-
   end
 
   def destroy
     if @user == current_user
-      flash[:alert] = "You cannot delete yourself!"
+      flash[:alert] = 'You cannot delete yourself!'
     else
       @user.destroy
-      flash[:notice] = "User has been deleted."
+      flash[:notice] = 'User has been deleted.'
     end
 
     redirect_to admin_users_path
@@ -65,6 +63,6 @@ class Admin::UsersController < Admin::BaseController
 
   private
     def set_admin
-      @user.admin = params[:user][:admin] == "1"
+      @user.admin = params[:user][:admin] == '1'
     end
 end
