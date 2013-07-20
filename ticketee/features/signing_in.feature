@@ -12,7 +12,7 @@ Scenario: Signing in via confirmation
   Then I should see "Your account was successfully confirmed"
   And I should see "Signed in as user@ticketee.com"
 
-Scenario: Signing in via confirmation
+Scenario: Signing in via login
   Given there are the following users:
     | email             | password | unconfirmed |
     | user@ticketee.com | password | false       |
